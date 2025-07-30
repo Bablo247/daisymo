@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Studio Rentals - DaisyMo Collective</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header and Main Navigation -->
+    <header
+      class="fixed top-0 left-0 right-0 flex items-center justify-between px-6 py-4 max-w-[1440px] mx-auto bg-white/90 backdrop-blur-sm z-50"
+    >
+      <a href="index.html">
+        <img src="./daisymocollective.com/logo-removebg-preview (1).png" alt="DaisyMo Logo" class="h-10" />
+      </a>
+
+      <form aria-label="Site Search" class="relative hidden md:block" role="search">
+        <input
+          aria-label="Search"
+          class="w-40 sm:w-56 md:w-64 lg:w-72 h-10 pl-3 pr-10 rounded border border-gray-300 text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-400"
+          placeholder="Search"
+          type="search"
+        />
+        <button
+          aria-label="Submit Search"
+          class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-600 hover:text-gray-900"
+          type="submit"
+        >
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+
+      <nav class="flex items-center space-x-6 text-gray-700 text-xs font-normal">
+        <a class="flex items-center space-x-1 hover:underline" href="#" id="join-list-btn">
+          <i class="far fa-user text-base"></i>
+          <span>Join List</span>
+        </a>
+        <a class="flex items-center space-x-1 hover:underline" href="shop.html">
+          <i class="fas fa-shopping-cart text-base"></i>
+          <span>Cart</span>
+        </a>
+      </nav>
+    </header>
+
+    <!-- Secondary Nav -->
+    <nav
+      class="fixed top-[72px] left-0 right-0 max-w-[1440px] mx-auto px-6 py-3 flex justify-center space-x-10 bg-white/90 backdrop-blur-sm text-gray-700 text-xs font-normal z-40"
+    >
+      <a class="hover:underline" href="/daisymocollective.com/index.html">Home</a>
+
+      <div class="relative group">
+        <button class="flex items-center space-x-1 hover:underline focus:outline-none text-[#3a3a3a] font-semibold">
+          <span>Studio</span>
+          <i class="fas fa-chevron-down text-[8px]"></i>
+        </button>
+        <div
+          class="absolute left-0 mt-2 w-40 bg-white text-gray-800 text-xs rounded shadow-md opacity-0 group-hover:opacity-100 transition duration-200 z-50"
+        >
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Our Space</a>
+          <a href="/daisymocollective.com/studio-booking.html" class="block px-4 py-2 hover:bg-gray-100">Book the Studio</a>
+          <a href="#podcast" class="block px-4 py-2 hover:bg-gray-100">Host Podcast</a>
+          <a href="#membership" class="block px-4 py-2 hover:bg-gray-100">Membership</a>
+          <a href="#gallery" class="block px-4 py-2 hover:bg-gray-100">Gallery</a>
+          <a href="./studio-booking.html#faq" class="block px-4 py-2 hover:bg-gray-100">Policies & FAQ</a>
+        </div>
+      </div>
+
+      <div class="relative group">
+        <button class="flex items-center space-x-1 hover:underline focus:outline-none">
+          <span>Shop</span>
+          <i class="fas fa-chevron-down text-[8px]"></i>
+        </button>
+        <div
+          class="absolute left-0 mt-2 w-40 bg-white text-gray-800 text-xs rounded shadow-md opacity-0 group-hover:opacity-100 transition duration-200 z-50"
+        >
+          <a href="shop.html#props" class="block px-4 py-2 hover:bg-gray-100">Props</a>
+          <a href="shop.html#lighting" class="block px-4 py-2 hover:bg-gray-100">Lighting</a>
+          <a href="shop.html#backdrops" class="block px-4 py-2 hover:bg-gray-100">Backdrops</a>
+          <a href="shop.html#accessories" class="block px-4 py-2 hover:bg-gray-100">Accessories</a>
+        </div>
+      </div>
+
+      <a class="hover:underline" href="./journal.html">Journal</a>
+      <a class="hover:underline" href="./about.html">About</a>
+      <a class="hover:underline" href="./contact.html">Contact</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-[120px]">
+      <!-- Hero Section -->
+      <section class="bg-[#f4f0eb] py-20">
+        <div class="max-w-[1440px] mx-auto px-6">
+          <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#3a3a3a] mb-6">
+              RENTAL STUDIO IN MAPLE GROOVE
+            </h1>
+            <p class="text-lg text-[#3a3a3a] mb-8 max-w-2xl mx-auto">
+              An adaptive studio space designed for film and photo productions
+            </p>
+            <a href="studio-booking.html" class="bg-[#3a3a3a] text-white text-sm px-8 py-3 rounded-sm hover:bg-[#2c2c2c] transition inline-block">
+              STUDIO RENTALS
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Space Section -->
+      <section id="our-space" class="py-20">
+        <div class="max-w-[1440px] mx-auto px-6">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <!-- Photo Slider Start -->
+              <div class="swiper w-full h-96 rounded-lg overflow-hidden">
+                <div class="swiper-wrapper">
+                  <!-- Slide 1 -->
+                  <div class="swiper-slide">
+                    <img src="https://storage.googleapis.com/a1aa/image/d0527144-8727-43f9-0ec3-53b372458db2.jpg" alt="Studio Interior" class="w-full h-96 object-cover" />
+                  </div>
+                  <!-- Slide 2 -->
+                  <div class="swiper-slide">
+                    <img src="./behindtheshoot.jpg" alt="Studio View 2" class="w-full h-96 object-cover" />
+                  </div>
+                  <!-- Slide 3 -->
+                  <div class="swiper-slide">
+                    <img src="./KPS-Podcast-Purple-Lights.webp" alt="Studio View 3" class="w-full h-96 object-cover" />
+                  </div>
+                </div>                
+
+                <!-- Pagination and Navigation (optional) -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div>
+              <!-- Photo Slider End -->
+
+            </div>
+            <div>
+              <h2 class="text-3xl font-bold text-[#3a3a3a] mb-6">Our Creative Space</h2>
+              <p class="text-gray-600 mb-6">
+                Our studio features natural lighting, professional equipment, and versatile backdrops perfect for photography, videography, and content creation. Located in the heart of Midtown Atlanta, we provide a creative sanctuary for artists and brands alike.
+              </p>
+              <ul class="space-y-3 text-gray-600">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-[#3a3a3a] mr-3"></i>
+                  Professional lighting equipment
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-[#3a3a3a] mr-3"></i>
+                  Multiple backdrop options
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-[#3a3a3a] mr-3"></i>
+                  Natural light windows
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-[#3a3a3a] mr-3"></i>
+                  Props and accessories available
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Makeup Services Section 
+      <section class="bg-[#f4f0eb] py-20">
+        <div class="max-w-[1440px] mx-auto px-6">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+              <h2 class="text-3xl font-bold text-[#3a3a3a] mb-6">Show Your Signature Look</h2>
+              <p class="text-gray-600 mb-6">
+                Get expert makeup tailored to you by appointment only. Our professional makeup artists specialize in creating looks that enhance your natural beauty and align with your creative vision.
+              </p>
+              <a href="#booking" class="bg-[#3a3a3a] text-white text-sm px-6 py-3 rounded-sm hover:bg-[#2c2c2c] transition inline-block">
+                BOOK NOW
+              </a>
+            </div>
+            <div class="order-1 md:order-2">
+              <img
+                src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop"
+                alt="Professional Makeup Services"
+                class="w-full h-96 object-cover rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+-->
+      <!-- Booking Section
+      <section id="booking" class="py-20">
+        <div class="max-w-4xl mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-[#3a3a3a] mb-4">Book Your Session</h2>
+            <p class="text-gray-600">Ready to create? Choose your package and let's bring your vision to life.</p>
+          </div>
+          
+          <div class="grid md:grid-cols-3 gap-8">
+            Studio Rental 
+            <div class="bg-white p-8 rounded-lg shadow-lg border">
+              <h3 class="text-xl font-bold text-[#3a3a3a] mb-4">Studio Rental</h3>
+              <div class="text-3xl font-bold text-[#3a3a3a] mb-4">$150 2 hours minimun<span class="text-lg font-normal">/2 hours</span></div>
+              <ul class="space-y-3 text-gray-600 mb-6">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  Full studio access
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  Basic lighting setup
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  Props included
+                </li>
+              </ul>
+              <button class="w-full bg-[#3a3a3a] text-white py-3 rounded-sm hover:bg-[#2c2c2c] transition">
+                Book Now
+              </button>
+            </div>
+-->
+            
+            
+            <!-- Studio + Makeup 
+            <div class="bg-white p-8 rounded-lg shadow-lg border border-[#3a3a3a] relative">
+              <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#3a3a3a] text-white px-4 py-1 rounded text-xs">
+                POPULAR
+              </div>
+              <h3 class="text-xl font-bold text-[#3a3a3a] mb-4">Studio + Makeup</h3>
+              <div class="text-3xl font-bold text-[#3a3a3a] mb-4">$250<span class="text-lg font-normal">/hour</span></div>
+              <ul class="space-y-3 text-gray-600 mb-6">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  Full studio access
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  Professional makeup artist
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  Premium lighting setup
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  Props & accessories
+                </li>
+              </ul>
+              <button class="w-full bg-[#3a3a3a] text-white py-3 rounded-sm hover:bg-[#2c2c2c] transition">
+                Book Now
+              </button>
+            </div>
+
+             Full Production 
+            <div class="bg-white p-8 rounded-lg shadow-lg border">
+              <h3 class="text-xl font-bold text-[#3a3a3a] mb-4">Full Production</h3>
+              <div class="text-3xl font-bold text-[#3a3a3a] mb-4">$400<span class="text-lg font-normal">/hour</span></div>
+              <ul class="space-y-3 text-gray-600 mb-6">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  Everything included
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  Professional photographer
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  Makeup artist
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  Post-production editing
+                </li>
+              </ul>
+              <button class="w-full bg-[#3a3a3a] text-white py-3 rounded-sm hover:bg-[#2c2c2c] transition">
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+-->
+      <!-- Gallery Section -->
+      <section id="gallery" class="bg-[#f4f0eb] py-20">
+        <div class="max-w-[1440px] mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-[#3a3a3a] mb-4">Studio Gallery</h2>
+            <p class="text-gray-600">See what's possible in our creative space</p>
+          </div>
+          
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <img src="./wildlife.jpg" alt="Gallery 1" class="w-full h-48 object-cover rounded-lg">
+            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=300&fit=crop" alt="Gallery 2" class="w-full h-48 object-cover rounded-lg">
+            <img src="https://images.unsplash.com/photo-1524863479829-916d8e77f114?w=300&h=300&fit=crop" alt="Gallery 3" class="w-full h-48 object-cover rounded-lg">
+            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=300&fit=crop" alt="Gallery 4" class="w-full h-48 object-cover rounded-lg">
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Email Subscription Modal -->
+    <div id="subscription-modal" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 hidden">
+      <div class="flex items-center justify-center min-h-screen p-4">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full relative">
+          <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-xl">
+            &times;
+          </button>
+          <h3 class="text-2xl font-bold text-[#3a3a3a] mb-4">Join The DaisyMo List</h3>
+          <p class="text-sm text-gray-600 mb-6">
+            Sign up to receive email updates on new products, exclusive announcements, gift ideas, special promotions, and more.
+          </p>
+          <form id="subscription-form" class="space-y-4">
+            <div class="flex gap-2">
+              <input
+                type="email"
+                id="email-input"
+                placeholder="Enter your email"
+                class="flex-1 px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
+                required
+              />
+              <button
+                type="submit"
+                class="bg-[#3a3a3a] text-white px-4 py-2 rounded text-sm hover:bg-[#2c2c2c] transition"
+              >
+                Subscribe
+              </button>
+            </div>
+            <div id="form-message" class="text-sm hidden"></div>
+          </form>
+          <div class="flex justify-center space-x-4 mt-6 text-sm text-gray-600">
+            <a href="https://www.instagram.com/daisymo_collective/?hl=en" target="_blank" class="hover:text-[#3a3a3a]">Instagram</a>
+            <a href="https://www.facebook.com/profile.php?id=61576836301594" target="_blank" class="hover:text-[#3a3a3a]">Facebook</a>
+            <a href="https://www.tiktok.com/@daisymo_collective" target="_blank" class="hover:text-[#3a3a3a]">TikTok</a>
+            <a href="https://wa.me/17632098807"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- Footer -->
+    <footer class="bg-[#3a3a3a] text-white text-xs py-10 mt-10">
+      <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <h4 class="font-semibold text-sm mb-2">DaisyMo Collective</h4>
+          <p class="text-gray-300">
+            Creative sanctuary for makers, models, and storytellers.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-sm mb-2">Links</h4>
+          <ul class="space-y-1">
+            <li><a href="about.html" class="hover:underline">About</a></li>
+            <li><a href="studio.html" class="hover:underline">Book Studio</a></li>
+            <li><a href="contact.html" class="hover:underline">Contact</a></li>
+            <li><a href="shop.html" class="hover:underline">Shop</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-sm mb-2">Follow Us</h4>
+          <div class="flex space-x-3">
+            <a href="https://www.instagram.com/daisymocollective/" target="_blank" class="text-white hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/daisymocollective/" target="_blank" class="text-white hover:text-gray-300"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.pinterest.com/daisymocollective/" target="_blank" class="text-white hover:text-gray-300"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center text-gray-400 mt-6">© 2025 DaisyMo Collective. All rights reserved.</div>
+    </footer>
+
+    <script>
+      // Modal functionality
+      const modal = document.getElementById('subscription-modal');
+      const joinBtn = document.getElementById('join-list-btn');
+      const closeBtn = document.getElementById('close-modal');
+      const form = document.getElementById('subscription-form');
+      const emailInput = document.getElementById('email-input');
+      const formMessage = document.getElementById('form-message');
+
+      // Open modal
+      joinBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => emailInput.focus(), 100);
+      });
+
+      // Close modal
+      function closeModal() {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+        formMessage.classList.add('hidden');
+        emailInput.value = '';
+      }
+
+      closeBtn.addEventListener('click', closeModal);
+
+      // Close modal when clicking outside
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+
+      // Form submission
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const email = emailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (!emailRegex.test(email)) {
+          formMessage.textContent = 'Please enter a valid email address.';
+          formMessage.className = 'text-sm text-red-600';
+          formMessage.classList.remove('hidden');
+          return;
+        }
+        
+        // Simulate form submission
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Subscribing...';
+        submitBtn.disabled = true;
+        
+        setTimeout(() => {
+          formMessage.textContent = 'Thank you for subscribing! Welcome to the DaisyMo family.';
+          formMessage.className = 'text-sm text-green-600';
+          formMessage.classList.remove('hidden');
+          emailInput.value = '';
+          
+          setTimeout(() => {
+            closeModal();
+          }, 2000);
+          
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }, 1500);
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+      
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    autoplay: {
+      delay: 3000,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Contact - DaisyMo Collective</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+       .map-container {
+      height: 100%;
+      width: 100%;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header and Main Navigation -->
+    <header
+      class="fixed top-0 left-0 right-0 flex items-center justify-between px-6 py-4 max-w-[1440px] mx-auto bg-white/90 backdrop-blur-sm z-50"
+    >
+      <a href="/daisymocollective.com/index.html">
+        <img src="/daisymocollective.com/logo-removebg-preview (1).png" alt="DaisyMo Logo" class="h-10" />
+      </a>
+
+      <form aria-label="Site Search" class="relative hidden md:block" role="search">
+        <input
+          aria-label="Search"
+          class="w-40 sm:w-56 md:w-64 lg:w-72 h-10 pl-3 pr-10 rounded border border-gray-300 text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-400"
+          placeholder="Search"
+          type="search"
+        />
+        <button
+          aria-label="Submit Search"
+          class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-600 hover:text-gray-900"
+          type="submit"
+        >
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+
+      <nav class="flex items-center space-x-6 text-gray-700 text-xs font-normal">
+        <a class="flex items-center space-x-1 hover:underline" href="#" id="join-list-btn">
+          <i class="far fa-user text-base"></i>
+          <span>Join List</span>
+        </a>
+        <a class="flex items-center space-x-1 hover:underline" href="/daisymocollective.com/shop.html">
+          <i class="fas fa-shopping-cart text-base"></i>
+          <span>Cart</span>
+        </a>
+      </nav>
+    </header>
+
+    <!-- Secondary Nav -->
+    <nav
+      class="fixed top-[72px] left-0 right-0 max-w-[1440px] mx-auto px-6 py-3 flex justify-center space-x-10 bg-white/90 backdrop-blur-sm text-gray-700 text-xs font-normal z-40"
+    >
+      <a class="hover:underline" href="/daisymocollective.com/index.html">Home</a>
+
+      <div class="relative group">
+        <button class="flex items-center space-x-1 hover:underline focus:outline-none">
+          <span>Studio</span>
+          <i class="fas fa-chevron-down text-[8px]"></i>
+        </button>
+        <div
+          class="absolute left-0 mt-2 w-40 bg-white text-gray-800 text-xs rounded shadow-md opacity-0 group-hover:opacity-100 transition duration-200 z-50"
+        >
+          <a href="/daisymocollective.com/studio.html" class="block px-4 py-2 hover:bg-gray-100">Our Space</a>
+          <a href="/daisymocollective.com/studio-booking.html" class="block px-4 py-2 hover:bg-gray-100">Book the Studio</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Host Podcast</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Membership</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Gallery</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Policies & FAQ</a>
+        </div>
+      </div>
+
+      <div class="relative group">
+        <button class="flex items-center space-x-1 hover:underline focus:outline-none">
+          <span>Shop</span>
+          <i class="fas fa-chevron-down text-[8px]"></i>
+        </button>
+        <div
+          class="absolute left-0 mt-2 w-40 bg-white text-gray-800 text-xs rounded shadow-md opacity-0 group-hover:opacity-100 transition duration-200 z-50"
+        >
+          <a href="shop.html#props" class="block px-4 py-2 hover:bg-gray-100">Props</a>
+          <a href="shop.html#lighting" class="block px-4 py-2 hover:bg-gray-100">Lighting</a>
+          <a href="shop.html#backdrops" class="block px-4 py-2 hover:bg-gray-100">Backdrops</a>
+          <a href="shop.html#accessories" class="block px-4 py-2 hover:bg-gray-100">Accessories</a>
+        </div>
+      </div>
+
+      <a class="hover:underline" href="/daisymocollective.com/journal.html">Journal</a>
+      <a class="hover:underline" href="/daisymocollective.com/about.html">About</a>
+      <a class="hover:underline text-[#3a3a3a] font-semibold" href="/daisymocollective.com/contact.html">Contact</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-[120px]">
+      <!-- Hero Section -->
+      <section class="bg-[#f4f0eb] py-20">
+        <div class="max-w-[1440px] mx-auto px-6">
+          <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#3a3a3a] mb-6">
+              Get In Touch
+            </h1>
+            <p class="text-lg text-[#3a3a3a] max-w-2xl mx-auto">
+              Ready to bring your creative vision to life? We'd love to hear from you.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Form & Info -->
+      <section class="py-20">
+        <div class="max-w-[1440px] mx-auto px-6">
+          <div class="grid md:grid-cols-2 gap-12">
+            <!-- Contact Form -->
+            <div>
+              <h2 class="text-3xl font-bold text-[#3a3a3a] mb-6">Send us a message</h2>
+              <form id="contact-form" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label for="first-name" class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                    <input
+                      type="text"
+                      id="first-name"
+                      name="firstName"
+                      required
+                      class="w-full px-3 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-[#3a3a3a] focus:border-[#3a3a3a]"
+                    />
+                  </div>
+                  <div>
+                    <label for="last-name" class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                    <input
+                      type="text"
+                      id="last-name"
+                      name="lastName"
+                      required
+                      class="w-full px-3 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-[#3a3a3a] focus:border-[#3a3a3a]"
+                    />
+                  </div>
+                </div>
+                
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-3 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-[#3a3a3a] focus:border-[#3a3a3a]"
+                  />
+                </div>
+                
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone (Optional)</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-[#3a3a3a] focus:border-[#3a3a3a]"
+                  />
+                </div>
+                
+                <div>
+                  <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Service Interest</label>
+                  <select
+                    id="service"
+                    name="service"
+                    required
+                    class="w-full px-3 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-[#3a3a3a] focus:border-[#3a3a3a]"
+                  >
+                    <option value="">Select a service</option>
+                    <option value="studio-rental">Studio Rental</option>
+                    <!--<option value="makeup-services">Makeup Services</option>-->
+                    <option value="full-production">Full Production</option>
+                    <option value="membership">Membership</option>
+                    <!--<option value="other">Other</option>-->
+                  </select>
+                </div>
+                
+                <div>
+                  <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    placeholder="Tell us about your project or how we can help..."
+                    class="w-full px-3 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-[#3a3a3a] focus:border-[#3a3a3a]"
+                  ></textarea>
+                </div>
+                
+                <div id="form-message" class="hidden"></div>
+                
+                <button
+                  type="submit"
+                  class="w-full bg-[#3a3a3a] text-white py-3 rounded-sm hover:bg-[#2c2c2c] transition font-medium"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+              <h2 class="text-3xl font-bold text-[#3a3a3a] mb-6">Visit our studio</h2>
+              
+              <div class="space-y-6">
+                <div class="flex items-start space-x-4">
+                  <div class="w-8 h-8 bg-[#3a3a3a] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <i class="fas fa-map-marker-alt text-white text-sm"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-[#3a3a3a] mb-1">Address</h3>
+                    <p class="text-gray-600"> <a href="https://maps.app.goo.gl/ZraPwQjFs9WjtXud6">
+                      10650 County Rd 81, Ste U<br>
+                      Maple Grove, MN 55369
+                    </a> 
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="flex items-start space-x-4">
+                  <div class="w-8 h-8 bg-[#3a3a3a] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <i class="fas fa-phone text-white text-sm"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-[#3a3a3a] mb-1">Phone</h3>
+                    <p class="text-gray-600"><a href="https://wa.me/17632098807">763 209 8807</a></p>
+                  </div>
+                </div>
+                
+                <div class="flex items-start space-x-4">
+                  <div class="w-8 h-8 bg-[#3a3a3a] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <i class="fas fa-envelope text-white text-sm"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-[#3a3a3a] mb-1">Email</h3>
+                    <p class="text-gray-600"><a href="mailto:admin@daisymocollective.com">admin@daisymocollective.com</a></p>
+                  </div>
+                </div>
+                
+                <div class="flex items-start space-x-4">
+                  <div class="w-8 h-8 bg-[#3a3a3a] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <i class="fas fa-clock text-white text-sm"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-[#3a3a3a] mb-1">Hours</h3>
+                    <div class="text-gray-600 text-sm">
+                      <p>Monday - Friday: 9:00 AM - 8:00 PM</p>
+                      <p>Saturday: 10:00 AM - 6:00 PM</p>
+                      <p>Sunday: 12:00 PM - 5:00 PM</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Social Media -->
+              <div class="mt-8">
+                <h3 class="font-semibold text-[#3a3a3a] mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                  <a href="https://www.instagram.com/daisymo_collective/?hl=en" target="_blank" class="w-10 h-10 bg-[#3a3a3a] rounded-full flex items-center justify-center text-white hover:bg-[#2c2c2c] transition">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="https://www.facebook.com/profile.php?id=61576836301594" target="_blank" class="w-10 h-10 bg-[#3a3a3a] rounded-full flex items-center justify-center text-white hover:bg-[#2c2c2c] transition">
+                    <i class="fab fa-facebook"></i>
+                  </a>
+                  <!-- <a href="https://www.pinterest.com/daisymocollective/" target="_blank" class="w-10 h-10 bg-[#3a3a3a] rounded-full flex items-center justify-center text-white hover:bg-[#2c2c2c] transition">
+                    <i class="fab fa-pinterest"></i> -->
+                  </a>
+                  <a href="https://www.tiktok.com/@daisymo_collective" target="_blank" class="w-10 h-10 bg-[#3a3a3a] rounded-full flex items-center justify-center text-white hover:bg-[#2c2c2c] transition">
+                    <i class="fab fa-tiktok"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Map Section -->
+      <section class="bg-[#f4f0eb] py-20">
+        <div class="max-w-[1440px] mx-auto px-6">
+          <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-[#3a3a3a] mb-4">Find Us</h2>
+            <p class="text-gray-600">Located in Beautiful city of Maple Grove</p>
+          </div>
+          
+          <!-- Placeholder for map - in a real implementation, you'd integrate with Google Maps or similar -->
+          <div class="bg-gray-300 h-96 rounded-lg flex items-center justify-center">
+            <div class="text-center">
+              <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2815.2006805859155!2d-93.41712299999999!3d45.122268999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDXCsDA3JzIwLjIiTiA5M8KwMjUnMDEuNiJX!5e0!3m2!1sen!2sng!4v1753826983289!5m2!1sen!2sng" 
+                 style="border:0;"
+                 allowfullscreen=""
+                loading="lazy"
+               referrerpolicy="no-referrer-when-downgrade">
+           </iframe>
+           </div>
+              <p class="text-sm text-gray-500 mt-2">10650 County Rd 81, Ste U, Maple Grove, MN 55369</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="py-20">
+        <div class="max-w-4xl mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-[#3a3a3a] mb-4">Frequently Asked Questions</h2>
+            <p class="text-gray-600">Quick answers to common questions</p>
+          </div>
+          
+          <div class="space-y-6">
+            <div class="border border-gray-200 rounded-lg">
+              <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 faq-toggle">
+                <span class="font-semibold text-[#3a3a3a]">How far in advance should I book?</span>
+                <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
+              </button>
+              <div class="px-6 pb-4 hidden faq-content">
+                <p class="text-gray-600">We recommend booking at least 2-3 weeks in advance, especially for weekends and popular time slots. However, we often have same-day availability for weekday bookings.</p>
+              </div>
+            </div>
+            
+            <div class="border border-gray-200 rounded-lg">
+              <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 faq-toggle">
+                <span class="font-semibold text-[#3a3a3a]">What's included in the studio rental?</span>
+                <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
+              </button>
+              <div class="px-6 pb-4 hidden faq-content">
+                <p class="text-gray-600">Basic studio rental includes access to our space, basic lighting setup, props, and backdrops. Professional lighting equipment and makeup services are available as add-ons.</p>
+              </div>
+            </div>
+            
+            <div class="border border-gray-200 rounded-lg">
+              <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 faq-toggle">
+                <span class="font-semibold text-[#3a3a3a]">Do you offer makeup services?</span>
+                <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
+              </button>
+              <div class="px-6 pb-4 hidden faq-content">
+                <p class="text-gray-600">No, Not at the Moment! We do not have professional makeup artists available at this time. </p>
+              </div>
+            </div>
+            
+            <div class="border border-gray-200 rounded-lg">
+              <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 faq-toggle">
+                <span class="font-semibold text-[#3a3a3a]">What's your cancellation policy?</span>
+                <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
+              </button>
+              <div class="px-6 pb-4 hidden faq-content">
+                <p class="text-gray-600">We require 48 hours notice for cancellations to receive a full refund. Cancellations within 24 hours are subject to a 50% fee. Same-day cancellations are non-refundable.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Email Subscription Modal -->
+    <div id="subscription-modal" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 hidden">
+      <div class="flex items-center justify-center min-h-screen p-4">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full relative">
+          <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-xl">
+            &times;
+          </button>
+          <h3 class="text-2xl font-bold text-[#3a3a3a] mb-4">Join The DaisyMo List</h3>
+          <p class="text-sm text-gray-600 mb-6">
+            Sign up to receive email updates on new products, exclusive announcements, gift ideas, special promotions, and more.
+          </p>
+          <form id="subscription-form" class="space-y-4">
+            <div class="flex gap-2">
+              <input
+                type="email"
+                id="email-input"
+                placeholder="Enter your email"
+                class="flex-1 px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
+                required
+              />
+              <button
+                type="submit"
+                class="bg-[#3a3a3a] text-white px-4 py-2 rounded text-sm hover:bg-[#2c2c2c] transition"
+              >
+                Subscribe
+              </button>
+            </div>
+            <div id="subscription-message" class="text-sm hidden"></div>
+          </form>
+          <div class="flex justify-center space-x-4 mt-6 text-sm text-gray-600">
+            <a href="https://www.instagram.com/daisymocollective/" target="_blank" class="hover:text-[#3a3a3a]">Instagram</a>
+            <a href="https://www.pinterest.com/daisymocollective/" target="_blank" class="hover:text-[#3a3a3a]">Pinterest</a>
+            <a href="https://www.tiktok.com/@daisymocollective/" target="_blank" class="hover:text-[#3a3a3a]">TikTok</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- Footer -->
+    <footer class="bg-[#3a3a3a] text-white text-xs py-10 mt-10">
+      <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <h4 class="font-semibold text-sm mb-2">DaisyMo Collective</h4>
+          <p class="text-gray-300">
+            Creative sanctuary for makers, models, and storytellers.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-sm mb-2">Links</h4>
+          <ul class="space-y-1">
+            <li><a href="/daisymocollective.com/about.html" class="hover:underline">About</a></li>
+            <li><a href="/daisymocollective.com/studio-booking.html" class="hover:underline">Book Studio</a></li>
+            <li><a href="/daisymocollective.com/contact.html" class="hover:underline">Contact</a></li>
+            <li><a href="/daisymocollective.com/shop.html" class="hover:underline">Shop</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-sm mb-2">Follow Us</h4>
+          <div class="flex space-x-3">
+            <a href="https://www.instagram.com/daisymo_collective/?hl=en" target="_blank" class="text-white hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61576836301594" target="_blank" class="text-white hover:text-gray-300"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/@daisymo_collective" target="_blank" class="text-white hover:text-gray-300"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center text-gray-400 mt-6">© 2025 DaisyMo Collective. All rights reserved.</div>
+    </footer>
+
+    <script>
+      // Contact form functionality
+      const contactForm = document.getElementById('contact-form');
+      const formMessage = document.getElementById('form-message');
+
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData);
+        
+        // Validate required fields
+        if (!data.firstName || !data.lastName || !data.email || !data.service || !data.message) {
+          showFormMessage('Please fill in all required fields.', 'error');
+          return;
+        }
+        
+        // Validate email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(data.email)) {
+          showFormMessage('Please enter a valid email address.', 'error');
+          return;
+        }
+        
+        // Show loading state
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        // Simulate form submission
+        setTimeout(() => {
+          showFormMessage('Thank you for your message! We\'ll get back to you within 24 hours.', 'success');
+          contactForm.reset();
+          
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }, 2000);
+      });
+
+      function showFormMessage(message, type) {
+        formMessage.textContent = message;
+        formMessage.className = `text-sm ${type === 'error' ? 'text-red-600' : 'text-green-600'}`;
+        formMessage.classList.remove('hidden');
+        
+        setTimeout(() => {
+          formMessage.classList.add('hidden');
+        }, 5000);
+      }
+
+      // FAQ functionality
+      document.querySelectorAll('.faq-toggle').forEach(button => {
+        button.addEventListener('click', function() {
+          const content = this.nextElementSibling;
+          const icon = this.querySelector('i');
+          
+          // Close all other FAQs
+          document.querySelectorAll('.faq-content').forEach(otherContent => {
+            if (otherContent !== content) {
+              otherContent.classList.add('hidden');
+              otherContent.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+            }
+          });
+          
+          // Toggle current FAQ
+          content.classList.toggle('hidden');
+          icon.classList.toggle('rotate-180');
+        });
+      });
+
+      // Modal functionality
+      const modal = document.getElementById('subscription-modal');
+      const joinBtn = document.getElementById('join-list-btn');
+      const closeBtn = document.getElementById('close-modal');
+      const subscriptionForm = document.getElementById('subscription-form');
+      const emailInput = document.getElementById('email-input');
+      const subscriptionMessage = document.getElementById('subscription-message');
+
+      // Open modal
+      joinBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => emailInput.focus(), 100);
+      });
+
+      // Close modal
+      function closeModal() {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+        subscriptionMessage.classList.add('hidden');
+        emailInput.value = '';
+      }
+
+      closeBtn.addEventListener('click', closeModal);
+
+      // Close modal when clicking outside
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+
+      // Subscription form submission
+      subscriptionForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const email = emailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (!emailRegex.test(email)) {
+          subscriptionMessage.textContent = 'Please enter a valid email address.';
+          subscriptionMessage.className = 'text-sm text-red-600';
+          subscriptionMessage.classList.remove('hidden');
+          return;
+        }
+        
+        // Simulate form submission
+        const submitBtn = subscriptionForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Subscribing...';
+        submitBtn.disabled = true;
+        
+        setTimeout(() => {
+          subscriptionMessage.textContent = 'Thank you for subscribing! Welcome to the DaisyMo family.';
+          subscriptionMessage.className = 'text-sm text-green-600';
+          subscriptionMessage.classList.remove('hidden');
+          emailInput.value = '';
+          
+          setTimeout(() => {
+            closeModal();
+          }, 2000);
+          
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }, 1500);
+      });
+    </script>
+  </body>
+</html>

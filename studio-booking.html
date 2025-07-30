@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Studio Booking - DaisyMo Collective</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8f8f8;
+      }
+      
+      .hero-section {
+        background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./daisymocollective.com/17-web-or-mls-LCC_1972_2.webp');
+        background-size: cover;
+        background-position: center;
+        min-height: 60vh;
+      }
+      
+      .booking-container {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        margin-top: -100px;
+        position: relative;
+        z-index: 10;
+      }
+      
+      .service-card {
+        border: 2px solid #e5e5e5;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: white;
+      }
+      
+      .service-card:hover {
+        border-color: #3a3a3a;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+      
+      .service-card.selected {
+        border-color: #3a3a3a;
+        background-color: #f9f9f9;
+      }
+      
+      .select-btn {
+        background: #3a3a3a;
+        color: white;
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 4px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      .select-btn:hover {
+        background: #2c2c2c;
+      }
+      
+      .faq-button {
+        background: #f4f0eb;
+        border: 1px solid #d1d1d1;
+        padding: 1rem 2rem;
+        margin: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+      }
+      
+      .faq-button:hover {
+        background: #e8e2db;
+      }
+      
+      .accordion-section {
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+      }
+      
+      .accordion-header {
+        background: #f8f8f8;
+        padding: 1.5rem;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        display: flex;
+        justify-content: between;
+        align-items: center;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+      
+      .accordion-header:hover {
+        background: #f0f0f0;
+      }
+      
+      .accordion-content {
+        padding: 1.5rem;
+        display: none;
+        background: white;
+      }
+      
+      .accordion-content.show {
+        display: block;
+      }
+      
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      
+      .feature-item {
+        background: #f9f9f9;
+        padding: 1rem;
+        border-radius: 6px;
+        border-left: 4px solid #3a3a3a;
+      }
+      
+      .feature-item h4 {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #3a3a3a;
+      }
+      
+      .feature-list {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .feature-list li {
+        padding: 0.25rem 0;
+        color: #666;
+        font-size: 0.9rem;
+      }
+      
+      .feature-list li:before {
+        content: "•";
+        color: #3a3a3a;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header and Main Navigation -->
+    <header
+      class="fixed top-0 left-0 right-0 flex items-center justify-between px-6 py-4 max-w-[1440px] mx-auto bg-white/90 backdrop-blur-sm z-50"
+    >
+      <a href="/daisymocollective.com/index.html">
+        <img src="./logo-removebg-preview (1).png" alt="DaisyMo Logo" class="h-12" />
+      </a>
+
+      <form aria-label="Site Search" class="relative hidden md:block" role="search">
+        <input
+          aria-label="Search"
+          class="w-40 sm:w-56 md:w-64 lg:w-72 h-10 pl-3 pr-10 rounded border border-gray-300 text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-400"
+          placeholder="Search"
+          type="search"
+        />
+        <button
+          aria-label="Submit Search"
+          class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-600 hover:text-gray-900"
+          type="submit"
+        >
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+
+      <nav class="flex items-center space-x-6 text-gray-700 text-xs font-normal">
+        <a class="flex items-center space-x-1 hover:underline" href="#" id="join-list-btn">
+          <i class="far fa-user text-base"></i>
+          <span>Join List</span>
+        </a>
+        <a class="flex items-center space-x-1 hover:underline" href="shop.html">
+          <i class="fas fa-shopping-cart text-base"></i>
+          <span>Cart</span>
+        </a>
+      </nav>
+    </header>
+
+    <!-- Secondary Nav -->
+    <nav
+      class="fixed top-[72px] left-0 right-0 max-w-[1440px] mx-auto px-6 py-3 flex justify-center space-x-10 bg-white/90 backdrop-blur-sm text-gray-700 text-xs font-normal z-40"
+    >
+      <a class="hover:underline" href="index.html">Home</a>
+
+      <div class="relative group">
+        <button class="flex items-center space-x-1 hover:underline focus:outline-none text-[#3a3a3a] font-semibold">
+          <span>Studio</span>
+          <i class="fas fa-chevron-down text-[8px]"></i>
+        </button>
+        <div
+          class="absolute left-0 mt-2 w-40 bg-white text-gray-800 text-xs rounded shadow-md opacity-0 group-hover:opacity-100 transition duration-200 z-50"
+        >
+          <a href="studio.html" class="block px-4 py-2 hover:bg-gray-100">Our Space</a>
+          <a href="studio-booking.html" class="block px-4 py-2 hover:bg-gray-100">Book the Studio</a>
+          <a href="studio.html#podcast" class="block px-4 py-2 hover:bg-gray-100">Host Podcast</a>
+          <a href="studio.html#membership" class="block px-4 py-2 hover:bg-gray-100">Membership</a>
+          <a href="studio.html#gallery" class="block px-4 py-2 hover:bg-gray-100">Gallery</a>
+          <a href="#faq-section" class="block px-4 py-2 hover:bg-gray-100">Policies & FAQ</a>
+        </div>
+      </div>
+
+      <div class="relative group">
+        <button class="flex items-center space-x-1 hover:underline focus:outline-none">
+          <span>Shop</span>
+          <i class="fas fa-chevron-down text-[8px]"></i>
+        </button>
+        <div
+          class="absolute left-0 mt-2 w-40 bg-white text-gray-800 text-xs rounded shadow-md opacity-0 group-hover:opacity-100 transition duration-200 z-50"
+        >
+          <a href="shop.html#props" class="block px-4 py-2 hover:bg-gray-100">Props</a>
+          <a href="shop.html#lighting" class="block px-4 py-2 hover:bg-gray-100">Lighting</a>
+          <a href="shop.html#backdrops" class="block px-4 py-2 hover:bg-gray-100">Backdrops</a>
+          <a href="shop.html#accessories" class="block px-4 py-2 hover:bg-gray-100">Accessories</a>
+        </div>
+      </div>
+
+      <a class="hover:underline" href="journal.html">Journal</a>
+      <a class="hover:underline" href="about.html">About</a>
+      <a class="hover:underline" href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section flex items-center justify-center pt-[120px]">
+      <div class="text-center text-white">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">DaisyMo Studio Rentals</h1>
+        <p class="text-sm md:text-base max-w-2xl mx-auto">
+          All studio rental options can be found below makeup booking appointments. Before you book your rental below, please take a moment to review our policies.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-6 pb-20 mt-8">
+      <!-- Booking Container -->
+      <div class="booking-container p-8">
+        <!-- FAQ and Policies Buttons -->
+        <div class="text-center mb-8">
+          <button class="faq-button" onclick="scrollToFAQ()">FAQ</button>
+          <button class="faq-button" onclick="scrollToPolicies()">Studio Policies</button>
+        </div>
+
+        <!-- Appointment Category Selection -->
+        <div class="text-center mb-8">
+          <h2 class="text-2xl font-bold text-gray-800 mb-2">
+            <i class="fas fa-calendar-alt mr-2"></i>
+            Select Appointment Category
+          </h2>
+        </div>
+
+        <!-- Service Cards -->
+        <div class="space-y-4 mb-8">
+          <div class="service-card" onclick="selectService(this, 'makeup')">
+            <div class="flex justify-between items-center">
+              <div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Podcast appointments</h3>
+                <p class="text-gray-600"></p>
+              </div>
+              <button class="select-btn">SELECT</button>
+            </div>
+          </div>
+
+          <div class="service-card" onclick="selectService(this, 'studio')">
+            <div class="flex justify-between items-center">
+              <div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Studio rentals</h3>
+                <p class="text-gray-600">Book our professional studio space for your creative projects</p>
+              </div>
+              <button class="select-btn">SELECT</button>
+            </div>
+          </div>
+
+          <div class="service-card" onclick="selectService(this, 'production')">
+            <div class="flex justify-between items-center">
+              <div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Full production packages</h3>
+                <p class="text-gray-600">Complete packages including studio, makeup, and photography</p>
+              </div>
+              <button class="select-btn">SELECT</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Login/Signup Section -->
+        <div class="text-center border-t pt-6">
+          <p class="text-gray-600 mb-4">Already have an account?</p>
+          <div class="space-x-4">
+            <button class="bg-gray-800 text-white px-6 py-2 rounded hover:bg-gray-700 transition">
+              SIGN UP
+            </button>
+            <button class="bg-gray-800 text-white px-6 py-2 rounded hover:bg-gray-700 transition">
+              LOGIN
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <section id="faq-section" class="mt-16">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">DaisyMo Studio</h2>
+          <h3 class="text-xl font-semibold text-gray-700">FAQ & POLICIES</h3>
+        </div>
+
+        <!-- Studio Features Accordion -->
+        <div class="accordion-section">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <span>Studio Features</span>
+            <i class="fas fa-chevron-down transition-transform"></i>
+          </div>
+          <div class="accordion-content">
+            <div class="feature-grid">
+              <div class="feature-item">
+                <h4>Included In Rental</h4>
+                <ul class="feature-list">
+                  <li>3 C-Stands</li>
+                  <li>Backdrop Stand</li>
+                  <li>Bluetooth Connection</li>
+                  <li>3 Makeup Stations</li>
+                  <li>2 Full-Length Mirrors</li>
+                  <li>Stools and Chairs for Seating</li>
+                  <li>Props</li>
+                  <li>Restroom On Site</li>
+                </ul>
+              </div>
+              
+              <div class="feature-item">
+                <h4>Available Add-Ons</h4>
+                <ul class="feature-list">
+                  <li>1 200s Amaran Light</li>
+                  <li>8 Seamless Paper Backdrops</li>
+                  <li>2 Large Umbrellas</li>
+                  <li>The Makeup Light</li>
+                  <li>2 Neewer Light Panels</li>
+                  <li>V Flats</li>
+                </ul>
+                <p class="text-sm text-gray-600 mt-2 italic">
+                  These items are available as add-ons to your studio rental.
+                </p>
+              </div>
+              
+              <div class="feature-item">
+                <h4>Complementary Features</h4>
+                <ul class="feature-list">
+                  <li>Bluetooth Speaker</li>
+                  <li>Garment Rack</li>
+                  <li>Coffee Station</li>
+                  <li>Makeup & changing area (LED vanity mirror and shelf, private restroom)</li>
+                  <li>All pictured furniture is included in bookings</li>
+                  <li>3-Step ladder</li>
+                  <li>Tall Floor Mirrors</li>
+                  <li>AC Unit</li>
+                  <li>Full Functioning Kitchen</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Important Details Accordion -->
+        <div class="accordion-section">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <span>Important Details</span>
+            <i class="fas fa-chevron-down transition-transform"></i>
+          </div>
+          <div class="accordion-content">
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-semibold text-gray-800 mb-2">Booking & Cancellation Policy</h4>
+                <ul class="feature-list">
+                  <li>48 hours notice required for cancellations to receive full refund</li>
+                  <li>Cancellations within 24 hours subject to 50% fee</li>
+                  <li>Same-day cancellations are non-refundable</li>
+                  <li>All bookings require a valid credit card to hold reservation</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 class="font-semibold text-gray-800 mb-2">Studio Guidelines</h4>
+                <ul class="feature-list">
+                  <li>Maximum occupancy: 8 people</li>
+                  <li>No smoking or vaping allowed</li>
+                  <li>Food and beverages permitted in designated areas only</li>
+                  <li>Client responsible for any damages to equipment or property</li>
+                  <li>Setup and breakdown time included in rental period</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 class="font-semibold text-gray-800 mb-2">What's Included</h4>
+                <ul class="feature-list">
+                  <li>Full studio access during booked time</li>
+                  <li>Basic lighting setup assistance</li>
+                  <li>Props and backdrop access</li>
+                  <li>Makeup stations and mirrors</li>
+                  <li>Parking space (subject to availability)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div class="accordion-section" id="faq">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <span>FAQ</span>
+            <i class="fas fa-chevron-down transition-transform"></i>
+          </div>
+          <div class="accordion-content">
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-semibold text-gray-800 mb-2">How far in advance should I book?</h4>
+                <p class="text-gray-600">We recommend booking at least 2-3 weeks in advance, especially for weekends and popular time slots. However, we often have same-day availability for weekday bookings.</p>
+              </div>
+              
+              <div>
+                <h4 class="font-semibold text-gray-800 mb-2">What's included in the studio rental?</h4>
+                <p class="text-gray-600">Basic studio rental includes access to our space, basic lighting setup, props, and backdrops. Professional lighting equipment and makeup services are available as add-ons.</p>
+              </div>
+              
+              <div>
+                <h4 class="font-semibold text-gray-800 mb-2">Do you offer makeup services?</h4>
+                <p class="text-gray-600">Yes! We have professional makeup artists available by appointment. This can be added to any studio rental package or booked as a standalone service.</p>
+              </div>
+              
+              <div>
+                <h4 class="font-semibold text-gray-800 mb-2">Can I bring my own equipment?</h4>
+                <p class="text-gray-600">Absolutely! You're welcome to bring your own lighting, cameras, and other equipment. Our studio is designed to accommodate various setups.</p>
+              </div>
+              
+              <div>
+                <h4 class="font-semibold text-gray-800 mb-2">Is parking available?</h4>
+                <p class="text-gray-600">Yes, we provide complimentary parking for our clients. Parking is subject to availability and is first-come, first-served.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Email Subscription Modal -->
+    <div id="subscription-modal" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 hidden">
+      <div class="flex items-center justify-center min-h-screen p-4">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full relative">
+          <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-xl">
+            &times;
+          </button>
+          <h3 class="text-2xl font-bold text-[#3a3a3a] mb-4">Join The DaisyMo List</h3>
+          <p class="text-sm text-gray-600 mb-6">
+            Sign up to receive email updates on new products, exclusive announcements, gift ideas, special promotions, and more.
+          </p>
+          <form id="subscription-form" class="space-y-4">
+            <div class="flex gap-2">
+              <input
+                type="email"
+                id="email-input"
+                placeholder="Enter your email"
+                class="flex-1 px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
+                required
+              />
+              <button
+                type="submit"
+                class="bg-[#3a3a3a] text-white px-4 py-2 rounded text-sm hover:bg-[#2c2c2c] transition"
+              >
+                Subscribe
+              </button>
+            </div>
+            <div id="form-message" class="text-sm hidden"></div>
+          </form>
+          <div class="flex justify-center space-x-4 mt-6 text-sm text-gray-600">
+            <a href="https://www.instagram.com/daisymocollective/" target="_blank" class="hover:text-[#3a3a3a]">Instagram</a>
+            <a href="https://www.pinterest.com/daisymocollective/" target="_blank" class="hover:text-[#3a3a3a]">Pinterest</a>
+            <a href="https://www.tiktok.com/@daisymocollective/" target="_blank" class="hover:text-[#3a3a3a]">TikTok</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#3a3a3a] text-white text-xs py-10 mt-10">
+      <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <h4 class="font-semibold text-sm mb-2">DaisyMo Collective</h4>
+          <p class="text-gray-300">
+            Creative sanctuary for makers, models, and storytellers.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-sm mb-2">Links</h4>
+          <ul class="space-y-1">
+            <li><a href="about.html" class="hover:underline">About</a></li>
+            <li><a href="studio-booking.html" class="hover:underline">Book Studio</a></li>
+            <li><a href="contact.html" class="hover:underline">Contact</a></li>
+            <li><a href="shop.html" class="hover:underline">Shop</a></li>
+            <li><a href="journal.html" class="hover:underline">Journal</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-sm mb-2">Follow Us</h4>
+          <div class="flex space-x-3">
+            <a href="https://www.instagram.com/daisymocollective/" target="_blank" class="text-white hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/daisymocollective/" target="_blank" class="text-white hover:text-gray-300"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.pinterest.com/daisymocollective/" target="_blank" class="text-white hover:text-gray-300"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center text-gray-400 mt-6">© 2025 DaisyMo Collective. All rights reserved.</div>
+    </footer>
+
+    <script>
+      // Service selection functionality
+      function selectService(card, serviceType) {
+        // Remove selected class from all cards
+        document.querySelectorAll('.service-card').forEach(c => c.classList.remove('selected'));
+        
+        // Add selected class to clicked card
+        card.classList.add('selected');
+        
+        // Here you would typically redirect to booking system or show booking form
+        console.log('Selected service:', serviceType);
+        
+        // Simulate booking process
+        setTimeout(() => {
+          alert(`Redirecting to ${serviceType} booking...`);
+        }, 500);
+      }
+
+      // Accordion functionality
+      function toggleAccordion(header) {
+        const content = header.nextElementSibling;
+        const icon = header.querySelector('i');
+        
+        // Close all other accordions
+        document.querySelectorAll('.accordion-content').forEach(c => {
+          if (c !== content) {
+            c.classList.remove('show');
+            c.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
+          }
+        });
+        
+        // Toggle current accordion
+        content.classList.toggle('show');
+        
+        // Rotate icon
+        if (content.classList.contains('show')) {
+          icon.style.transform = 'rotate(180deg)';
+        } else {
+          icon.style.transform = 'rotate(0deg)';
+        }
+      }
+
+      // Scroll to FAQ section
+      function scrollToFAQ() {
+        document.getElementById('faq-section').scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+
+      // Scroll to Policies section
+      function scrollToPolicies() {
+        document.getElementById('faq-section').scrollIntoView({
+          behavior: 'smooth'
+        });
+        
+        // Open the Important Details accordion
+        setTimeout(() => {
+          const importantDetailsHeader = document.querySelectorAll('.accordion-header')[1];
+          if (!importantDetailsHeader.nextElementSibling.classList.contains('show')) {
+            toggleAccordion(importantDetailsHeader);
+          }
+        }, 500);
+      }
+
+      // Modal functionality
+      const modal = document.getElementById('subscription-modal');
+      const joinBtn = document.getElementById('join-list-btn');
+      const closeBtn = document.getElementById('close-modal');
+      const form = document.getElementById('subscription-form');
+      const emailInput = document.getElementById('email-input');
+      const formMessage = document.getElementById('form-message');
+
+      // Open modal
+      joinBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => emailInput.focus(), 100);
+      });
+
+      // Close modal
+      function closeModal() {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+        formMessage.classList.add('hidden');
+        emailInput.value = '';
+      }
+
+      closeBtn.addEventListener('click', closeModal);
+
+      // Close modal when clicking outside
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+
+      // Form submission
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const email = emailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (!emailRegex.test(email)) {
+          formMessage.textContent = 'Please enter a valid email address.';
+          formMessage.className = 'text-sm text-red-600';
+          formMessage.classList.remove('hidden');
+          return;
+        }
+        
+        // Simulate form submission
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Subscribing...';
+        submitBtn.disabled = true;
+        
+        setTimeout(() => {
+          formMessage.textContent = 'Thank you for subscribing! Welcome to the DaisyMo family.';
+          formMessage.className = 'text-sm text-green-600';
+          formMessage.classList.remove('hidden');
+          emailInput.value = '';
+          
+          setTimeout(() => {
+            closeModal();
+          }, 2000);
+          
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }, 1500);
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

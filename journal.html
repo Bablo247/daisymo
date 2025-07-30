@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Journal - DaisyMo Collective</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .article-card {
+        transition: all 0.3s ease;
+      }
+      .article-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      }
+      .category-tag {
+        background: linear-gradient(135deg, #3a3a3a, #2c2c2c);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header and Main Navigation -->
+    <header
+      class="fixed top-0 left-0 right-0 flex items-center justify-between px-6 py-4 max-w-[1440px] mx-auto bg-white/90 backdrop-blur-sm z-50"
+    >
+      <a href="index.html">
+        <img src="./logo-removebg-preview (1).png" alt="DaisyMo Logo" class="h-12" />
+      </a>
+
+      <form aria-label="Site Search" class="relative hidden md:block" role="search">
+        <input
+          aria-label="Search"
+          class="w-40 sm:w-56 md:w-64 lg:w-72 h-10 pl-3 pr-10 rounded border border-gray-300 text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-400"
+          placeholder="Search articles..."
+          type="search"
+        />
+        <button
+          aria-label="Submit Search"
+          class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-600 hover:text-gray-900"
+          type="submit"
+        >
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+
+      <nav class="flex items-center space-x-6 text-gray-700 text-xs font-normal">
+        <a class="flex items-center space-x-1 hover:underline" href="#" id="join-list-btn">
+          <i class="far fa-user text-base"></i>
+          <span>Join List</span>
+        </a>
+        <a class="flex items-center space-x-1 hover:underline" href="shop.html">
+          <i class="fas fa-shopping-cart text-base"></i>
+          <span>Cart</span>
+        </a>
+      </nav>
+    </header>
+
+    <!-- Secondary Nav -->
+    <nav
+      class="fixed top-[72px] left-0 right-0 max-w-[1440px] mx-auto px-6 py-3 flex justify-center space-x-10 bg-white/90 backdrop-blur-sm text-gray-700 text-xs font-normal z-40"
+    >
+      <a class="hover:underline" href="./index.html">Home</a>
+
+      <div class="relative group">
+        <button class="flex items-center space-x-1 hover:underline focus:outline-none">
+          <span>Studio</span>
+          <i class="fas fa-chevron-down text-[8px]"></i>
+        </button>
+        <div
+          class="absolute left-0 mt-2 w-40 bg-white text-gray-800 text-xs rounded shadow-md opacity-0 group-hover:opacity-100 transition duration-200 z-50"
+        >
+          <a href="./studio.html" class="block px-4 py-2 hover:bg-gray-100">Our Space</a>
+          <a href="./studio-booking.html" class="block px-4 py-2 hover:bg-gray-100">Book the Studio</a>
+          <a href="studio.html#podcast" class="block px-4 py-2 hover:bg-gray-100">Host Podcast</a>
+          <a href="studio.html#membership" class="block px-4 py-2 hover:bg-gray-100">Membership</a>
+          <a href="studio.html#gallery" class="block px-4 py-2 hover:bg-gray-100">Gallery</a>
+          <a href="./studio-booking.html#faq" class="block px-4 py-2 hover:bg-gray-100">Policies & FAQ</a>
+        </div>
+      </div>
+
+      <div class="relative group">
+        <button class="flex items-center space-x-1 hover:underline focus:outline-none">
+          <span>Shop</span>
+          <i class="fas fa-chevron-down text-[8px]"></i>
+        </button>
+        <div
+          class="absolute left-0 mt-2 w-40 bg-white text-gray-800 text-xs rounded shadow-md opacity-0 group-hover:opacity-100 transition duration-200 z-50"
+        >
+          <a href="shop.html#props" class="block px-4 py-2 hover:bg-gray-100">Props</a>
+          <a href="shop.html#lighting" class="block px-4 py-2 hover:bg-gray-100">Lighting</a>
+          <a href="shop.html#backdrops" class="block px-4 py-2 hover:bg-gray-100">Backdrops</a>
+          <a href="shop.html#accessories" class="block px-4 py-2 hover:bg-gray-100">Accessories</a>
+        </div>
+      </div>
+
+      <a class="hover:underline text-[#3a3a3a] font-semibold" href="journal.html">Journal</a>
+      <a class="hover:underline" href="about.html">About</a>
+      <a class="hover:underline" href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="bg-cover bg-center bg-no-repeat pt-[120px]" style="background-image: url(./journal.jpeg);">
+ >
+      <!-- Hero Section -->
+      <section class="bg-gradient-to-br from-[#f4f0eb] to-[#e8e2db] py-20">
+        <div class="max-w-[1440px] mx-auto px-6">
+          <div class="text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-[#3a3a3a] mb-6 leading-tight">
+              The DaisyMo<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3a3a3a] to-[#666]">Journal</span>
+            </h1>
+            <p class="text-lg text-[#3a3a3a] mb-8 max-w-2xl mx-auto leading-relaxed">
+              Stories, insights, and inspiration from the creative community. Discover tutorials, behind-the-scenes content, and the latest trends in beauty and photography.
+            </p>
+            <div class="flex flex-wrap justify-center gap-3">
+              <a href="./journal.html">
+              <button class="category-filter px-6 py-2 rounded-full text-white text-sm font-medium transition active" data-category="all">
+                All Posts
+              </button>
+              </a>
+              <a href="./journal.html">
+              <button class="category-filter px-6 py-2 rounded-full border border-[#3a3a3a] text-[#3a3a3a] text-sm font-medium hover:bg-[#3a3a3a] hover:text-white transition" data-category="tutorials">
+                Tutorials
+              </button>
+              </a>
+              <a href="./journal.html">
+              <button class="category-filter px-6 py-2 rounded-full border border-[#3a3a3a] text-[#3a3a3a] text-sm font-medium hover:bg-[#3a3a3a] hover:text-white transition" data-category="behind-scenes">
+                Behind the Scenes
+              </button>
+              </a>
+              <a href="./journal.html">
+                              <button class="category-filter px-6 py-2 rounded-full border border-[#3a3a3a] text-[#3a3a3a] text-sm font-medium hover:bg-[#3a3a3a] hover:text-white transition" data-category="client-spotlight">
+                Client Spotlight
+              </button>
+              </a>
+              <a href="./journal.html">
+              <button class="category-filter px-6 py-2 rounded-full border border-[#3a3a3a] text-[#3a3a3a] text-sm font-medium hover:bg-[#3a3a3a] hover:text-white transition" data-category="tips">
+                Tips & Tricks
+              </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Article -->
+      <section class="py-20">
+        <div class="max-w-[1440px] mx-auto px-6">
+          <div class="bg-white rounded-2xl shadow-xl overflow-hidden article-card">
+            <div class="grid md:grid-cols-2 gap-0">
+              <div class="relative overflow-hidden">
+                <img
+                  src="./studio2.jpeg"
+                  alt="Featured Article"
+                  class="w-full h-full object-cover min-h-[400px] hover:scale-105 transition duration-700"
+                />
+                <div class="absolute top-4 left-4">
+                  <span class="category-tag px-3 py-1 rounded-full text-white text-xs font-medium">
+                    Featured
+                  </span>
+                </div>
+              </div>
+              <div class="p-8 md:p-12 flex flex-col justify-center">
+                <div class="flex items-center space-x-4 mb-4">
+                  <span class="text-sm text-gray-500">January 15, 2025</span>
+                  <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                  <span class="text-sm text-gray-500">5 min read</span>
+                </div>
+                <h2 class="text-3xl font-bold text-[#3a3a3a] mb-4 leading-tight">
+                  The Art of Natural Light Photography in Studio Settings
+                </h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                  Discover how to harness the power of natural light in your studio sessions. Learn professional techniques for creating stunning portraits that capture authentic beauty and emotion.
+                </p>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center space-x-3">
+                    <img
+                      src="./studio.jpeg"
+                      alt="Daisy"
+                      class="w-10 h-10 rounded-full object-cover"
+                    />
+                    <div>
+                      <p class="text-sm font-medium text-[#3a3a3a]">Daisy Mo</p>
+                      <p class="text-xs text-gray-500">Founder & Creative Director</p>
+                    </div>
+                  </div>
+                  <a href="#" class="text-[#3a3a3a] font-medium hover:underline">
+                    Read More →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Articles Grid -->
+      <section class="pb-20">
+        <div class="max-w-[1440px] mx-auto px-6">
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="articles-grid">
+            
+            <!-- Article 1 -->
+            <article class="bg-white rounded-xl shadow-lg overflow-hidden article-card" data-category="tutorials">
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=250&fit=crop"
+                  alt="Makeup Tutorial"
+                  class="w-full h-48 object-cover hover:scale-105 transition duration-500"
+                />
+                <div class="absolute top-3 left-3">
+                  <span class="category-tag px-2 py-1 rounded-full text-white text-xs font-medium">
+                    Tutorial
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center space-x-3 mb-3">
+                  <span class="text-xs text-gray-500">January 12, 2025</span>
+                  <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                  <span class="text-xs text-gray-500">3 min read</span>
+                </div>
+                <h3 class="text-xl font-bold text-[#3a3a3a] mb-3 leading-tight">
+                  5 Essential Makeup Techniques for Photography
+                </h3>
+                <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                  Master the art of camera-ready makeup with these professional techniques that ensure you look flawless under any lighting condition.
+                </p>
+                <a href="#" class="text-[#3a3a3a] font-medium text-sm hover:underline">
+                  Read Tutorial →
+                </a>
+              </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="bg-white rounded-xl shadow-lg overflow-hidden article-card" data-category="behind-scenes">
+              <div class="relative overflow-hidden">
+                <img
+                  src="./behindtheshoot.jpg"
+                  alt="Behind the Scenes"
+                  class="w-full h-48 object-cover hover:scale-105 transition duration-500"
+                />
+                <div class="absolute top-3 left-3">
+                  <span class="category-tag px-2 py-1 rounded-full text-white text-xs font-medium">
+                    Behind the Scenes
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center space-x-3 mb-3">
+                  <span class="text-xs text-gray-500">January 10, 2025</span>
+                  <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                  <span class="text-xs text-gray-500">4 min read</span>
+                </div>
+                <h3 class="text-xl font-bold text-[#3a3a3a] mb-3 leading-tight">
+                  Creating Magic: A Day in Our Studio
+                </h3>
+                <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                  Go behind the scenes of a typical day at DaisyMo Collective and see how we transform creative visions into stunning reality.
+                </p>
+                <a href="#" class="text-[#3a3a3a] font-medium text-sm hover:underline">
+                  See Behind the Scenes →
+                </a>
+              </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="bg-white rounded-xl shadow-lg overflow-hidden article-card" data-category="client-spotlight">
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1524863479829-916d8e77f114?w=400&h=250&fit=crop"
+                  alt="Client Spotlight"
+                  class="w-full h-48 object-cover hover:scale-105 transition duration-500"
+                />
+                <div class="absolute top-3 left-3">
+                  <span class="category-tag px-2 py-1 rounded-full text-white text-xs font-medium">
+                    Client Spotlight
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center space-x-3 mb-3">
+                  <span class="text-xs text-gray-500">January 8, 2025</span>
+                  <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                  <span class="text-xs text-gray-500">2 min read</span>
+                </div>
+                <h3 class="text-xl font-bold text-[#3a3a3a] mb-3 leading-tight">
+                  Client Spotlight: Sarah's Brand Transformation
+                </h3>
+                <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                  Discover how we helped entrepreneur Sarah create a stunning brand photoshoot that elevated her business to the next level.
+                </p>
+                <a href="#" class="text-[#3a3a3a] font-medium text-sm hover:underline">
+                  Read Story →
+                </a>
+              </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="bg-white rounded-xl shadow-lg overflow-hidden article-card" data-category="tips">
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&h=250&fit=crop"
+                  alt="Photography Tips"
+                  class="w-full h-48 object-cover hover:scale-105 transition duration-500"
+                />
+                <div class="absolute top-3 left-3">
+                  <span class="category-tag px-2 py-1 rounded-full text-white text-xs font-medium">
+                    Tips & Tricks
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center space-x-3 mb-3">
+                  <span class="text-xs text-gray-500">January 5, 2025</span>
+                  <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                  <span class="text-xs text-gray-500">6 min read</span>
+                </div>
+                <h3 class="text-xl font-bold text-[#3a3a3a] mb-3 leading-tight">
+                  Lighting Setup Guide for Portrait Photography
+                </h3>
+                <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                  Learn the fundamentals of portrait lighting with our comprehensive guide to creating professional-quality images every time.
+                </p>
+                <a href="#" class="text-[#3a3a3a] font-medium text-sm hover:underline">
+                  Learn More →
+                </a>
+              </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="bg-white rounded-xl shadow-lg overflow-hidden article-card" data-category="tutorials">
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=400&h=250&fit=crop"
+                  alt="Beauty Tutorial"
+                  class="w-full h-48 object-cover hover:scale-105 transition duration-500"
+                />
+                <div class="absolute top-3 left-3">
+                  <span class="category-tag px-2 py-1 rounded-full text-white text-xs font-medium">
+                    Tutorial
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center space-x-3 mb-3">
+                  <span class="text-xs text-gray-500">January 3, 2025</span>
+                  <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                  <span class="text-xs text-gray-500">4 min read</span>
+                </div>
+                <h3 class="text-xl font-bold text-[#3a3a3a] mb-3 leading-tight">
+                  The Perfect Lip Look for Every Skin Tone
+                </h3>
+                <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                  Discover how to choose and apply the perfect lip color that complements your unique skin tone and enhances your natural beauty.
+                </p>
+                <a href="#" class="text-[#3a3a3a] font-medium text-sm hover:underline">
+                  Watch Tutorial →
+                </a>
+              </div>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="bg-white rounded-xl shadow-lg overflow-hidden article-card" data-category="behind-scenes">
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=400&h=250&fit=crop"
+                  alt="Studio Setup"
+                  class="w-full h-48 object-cover hover:scale-105 transition duration-500"
+                />
+                <div class="absolute top-3 left-3">
+                  <span class="category-tag px-2 py-1 rounded-full text-white text-xs font-medium">
+                    Behind the Scenes
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center space-x-3 mb-3">
+                  <span class="text-xs text-gray-500">December 30, 2024</span>
+                  <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                  <span class="text-xs text-gray-500">3 min read</span>
+                </div>
+                <h3 class="text-xl font-bold text-[#3a3a3a] mb-3 leading-tight">
+                  How We Design Each Unique Studio Experience
+                </h3>
+                <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                  Every client is unique, and so is every studio setup. See how we customize our space for different creative visions and projects.
+                </p>
+                <a href="#" class="text-[#3a3a3a] font-medium text-sm hover:underline">
+                  Explore Process →
+                </a>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- Load More Button -->
+          <div class="text-center mt-12">
+            <button class="bg-[#3a3a3a] text-white px-8 py-3 rounded-sm hover:bg-[#2c2c2c] transition font-medium">
+              Load More Articles
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter Signup -->
+      <section class="bg-gradient-to-r from-[#3a3a3a] to-[#2c2c2c] py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold text-white mb-4">Stay Inspired</h2>
+          <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+            Get the latest articles, tutorials, and behind-the-scenes content delivered straight to your inbox. Join our creative community today.
+          </p>
+          <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              class="flex-1 px-4 py-3 rounded-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
+              required
+            />
+            <button
+              type="submit"
+              class="bg-white text-[#3a3a3a] px-6 py-3 rounded-sm hover:bg-gray-100 transition font-medium"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Email Subscription Modal -->
+    <div id="subscription-modal" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 hidden">
+      <div class="flex items-center justify-center min-h-screen p-4">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full relative">
+          <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-xl">
+            &times;
+          </button>
+          <h3 class="text-2xl font-bold text-[#3a3a3a] mb-4">Join The DaisyMo List</h3>
+          <p class="text-sm text-gray-600 mb-6">
+            Sign up to receive email updates on new products, exclusive announcements, gift ideas, special promotions, and more.
+          </p>
+          <form id="subscription-form" class="space-y-4">
+            <div class="flex gap-2">
+              <input
+                type="email"
+                id="email-input"
+                placeholder="Enter your email"
+                class="flex-1 px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
+                required
+              />
+              <button
+                type="submit"
+                class="bg-[#3a3a3a] text-white px-4 py-2 rounded text-sm hover:bg-[#2c2c2c] transition"
+              >
+                Subscribe
+              </button>
+            </div>
+            <div id="form-message" class="text-sm hidden"></div>
+          </form>
+          <div class="flex justify-center space-x-4 mt-6 text-sm text-gray-600">
+            <a href="https://www.instagram.com/daisymocollective/" target="_blank" class="hover:text-[#3a3a3a]">Instagram</a>
+            <a href="https://www.pinterest.com/daisymocollective/" target="_blank" class="hover:text-[#3a3a3a]">Pinterest</a>
+            <a href="https://www.tiktok.com/@daisymocollective/" target="_blank" class="hover:text-[#3a3a3a]">TikTok</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- Footer -->
+    <footer class="bg-[#3a3a3a] text-white text-xs py-10 mt-10">
+      <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <h4 class="font-semibold text-sm mb-2">DaisyMo Collective</h4>
+          <p class="text-gray-300">
+            Creative sanctuary for makers, models, and storytellers.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-sm mb-2">Links</h4>
+          <ul class="space-y-1">
+            <li><a href="about.html" class="hover:underline">About</a></li>
+            <li><a href="studio.html" class="hover:underline">Book Studio</a></li>
+            <li><a href="contact.html" class="hover:underline">Contact</a></li>
+            <li><a href="shop.html" class="hover:underline">Shop</a></li>
+            <li><a href="journal.html" class="hover:underline">Journal</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-sm mb-2">Follow Us</h4>
+          <div class="flex space-x-3">
+            <a href="https://www.instagram.com/daisymocollective/" target="_blank" class="text-white hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/daisymocollective/" target="_blank" class="text-white hover:text-gray-300"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.pinterest.com/daisymocollective/" target="_blank" class="text-white hover:text-gray-300"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center text-gray-400 mt-6">© 2025 DaisyMo Collective. All rights reserved.</div>
+    </footer>
+
+    <script>
+      // Category filtering functionality
+      const categoryFilters = document.querySelectorAll('.category-filter');
+      const articles = document.querySelectorAll('[data-category]');
+
+      categoryFilters.forEach(filter => {
+        filter.addEventListener('click', function() {
+          const category = this.getAttribute('data-category');
+          
+          // Update active filter
+          categoryFilters.forEach(f => {
+            f.classList.remove('active', 'category-tag');
+            f.classList.add('border', 'border-[#3a3a3a]', 'text-[#3a3a3a]');
+          });
+          
+          this.classList.add('active', 'category-tag');
+          this.classList.remove('border', 'border-[#3a3a3a]', 'text-[#3a3a3a]');
+          
+          // Filter articles
+          articles.forEach(article => {
+            if (category === 'all' || article.getAttribute('data-category') === category) {
+              article.style.display = 'block';
+              setTimeout(() => {
+                article.style.opacity = '1';
+                article.style.transform = 'translateY(0)';
+              }, 100);
+            } else {
+              article.style.opacity = '0';
+              article.style.transform = 'translateY(20px)';
+              setTimeout(() => {
+                article.style.display = 'none';
+              }, 300);
+            }
+          });
+        });
+      });
+
+      // Initialize first filter as active
+      document.querySelector('[data-category="all"]').classList.add('category-tag');
+      document.querySelector('[data-category="all"]').classList.remove('border', 'border-[#3a3a3a]', 'text-[#3a3a3a]');
+
+      // Modal functionality
+      const modal = document.getElementById('subscription-modal');
+      const joinBtn = document.getElementById('join-list-btn');
+      const closeBtn = document.getElementById('close-modal');
+      const form = document.getElementById('subscription-form');
+      const emailInput = document.getElementById('email-input');
+      const formMessage = document.getElementById('form-message');
+
+      // Open modal
+      joinBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => emailInput.focus(), 100);
+      });
+
+      // Close modal
+      function closeModal() {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+        formMessage.classList.add('hidden');
+        emailInput.value = '';
+      }
+
+      closeBtn.addEventListener('click', closeModal);
+
+      // Close modal when clicking outside
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+
+      // Form submission
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const email = emailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (!emailRegex.test(email)) {
+          formMessage.textContent = 'Please enter a valid email address.';
+          formMessage.className = 'text-sm text-red-600';
+          formMessage.classList.remove('hidden');
+          return;
+        }
+        
+        // Simulate form submission
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Subscribing...';
+        submitBtn.disabled = true;
+        
+        setTimeout(() => {
+          formMessage.textContent = 'Thank you for subscribing! Welcome to the DaisyMo family.';
+          formMessage.className = 'text-sm text-green-600';
+          formMessage.classList.remove('hidden');
+          emailInput.value = '';
+          
+          setTimeout(() => {
+            closeModal();
+          }, 2000);
+          
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }, 1500);
+      });
+
+      // Newsletter form functionality
+      const newsletterForm = document.querySelector('section form');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const emailInput = this.querySelector('input[type="email"]');
+          const submitBtn = this.querySelector('button[type="submit"]');
+          const originalText = submitBtn.textContent;
+          
+          submitBtn.textContent = 'Subscribing...';
+          submitBtn.disabled = true;
+          
+          setTimeout(() => {
+            submitBtn.textContent = 'Subscribed!';
+            emailInput.value = '';
+            
+            setTimeout(() => {
+              submitBtn.textContent = originalText;
+              submitBtn.disabled = false;
+            }, 2000);
+          }, 1500);
+        });
+      }
+
+      // Smooth animations on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Observe all article cards
+      document.querySelectorAll('.article-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s ease';
+        observer.observe(card);
+      });
+    </script>
+  </body>
+</html>
